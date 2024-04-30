@@ -16,9 +16,12 @@ const app = new Elysia()
     .get('/', () => 'hi', {
         hi: 'Elysia'
     })
+    .get('/id/:id', ({ params: { id } }) => id)
 
 app.listen(3000);
 
 console.log(
   `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
+
+export type App = typeof app
