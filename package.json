@@ -7,7 +7,9 @@
   },
   "dependencies": {
     "@elysiajs/eden": "^1.0.12",
+    "@elysiajs/swagger": "^1.0.4",
     "elysia": "^1.0.15",
+    "elysia-autoroutes": "^0.5.0",
     "userop": "^0.4.0-beta.5"
   },
   "devDependencies": {

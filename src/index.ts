@@ -1,4 +1,6 @@
 import { Elysia } from "elysia";
+import { swagger } from '@elysiajs/swagger'
+
 const { Client, Presets } = require('userop')
 const { InfuraProvider, Signer, Wallet, parseEther } = require("ethers")
 
@@ -12,6 +14,7 @@ const plugin = new Elysia({ name: 'plugin' })
     }))
 
 const app = new Elysia()
+    .use(swagger())
     .use(plugin)
     .get('/', () => 'hi', {
         hi: 'Elysia'
