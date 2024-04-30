@@ -1,12 +1,13 @@
 {
   "name": "barbecue",
-  "version": "1.0.50",
+  "version": "0.0.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "latest",
+    "userop": "^0.4.0-beta.5"
   },
   "devDependencies": {
     "bun-types": "latest"

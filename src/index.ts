@@ -1,7 +1,24 @@
 import { Elysia } from "elysia";
+const { Client, Presets } = require('userop')
+const { InfuraProvider, Signer, Wallet, parseEther } = require("ethers")
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+const plugin = new Elysia({ name: 'plugin' })
+    .macro(({ onBeforeHandle }) => ({
+        hi(word: string) {
+            onBeforeHandle(() => {
+                console.log(word)
+            })
+        }
+    }))
+
+const app = new Elysia()
+    .use(plugin)
+    .get('/', () => 'hi', {
+        hi: 'Elysia'
+    })
+
+app.listen(3000);
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
