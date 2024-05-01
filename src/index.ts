@@ -6,9 +6,9 @@ const app = new Elysia()
   .use(swagger())
   .use(
     autoroutes({
-      routesDir: "./routes", // -> optional, defaults to './routes'
+      routesDir: "./api", // -> optional, defaults to './routes'
       prefix: "/smart_account", // -> optional, defaults to ''
-      generateTags: false, // -> optional, defaults to true
+      generateTags: true, // -> optional, defaults to true
     })
   )
   .listen(3000)
