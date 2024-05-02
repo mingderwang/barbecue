@@ -17,4 +17,7 @@ console.log(
   `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
 
+console.log(
+  `🦊 Swagger is running at http://${app.server?.hostname}:${app.server?.port}/swagger`
+);
 export type ElysiaApp = typeof app
